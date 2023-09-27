@@ -11,7 +11,7 @@ def get(host, port):
         s.send(request)  # sending the request, e.g. requesting the google homepage
         s.shutdown(socket.SHUT_WR)  # socket can read and write, we are shutting down the write side and then get
         chunk = s.recv(BYTES_TO_READ)  # continuously receive the response
-        result = b"" + chunk
+        result = b'' + chunk
 
         while len(chunk) > 0:
             chunk = s.recv(BYTES_TO_READ)
@@ -21,4 +21,4 @@ def get(host, port):
         return result
 
 
-print(get("127.0.0.1", 8000))
+print(get("127.0.0.1", 8080))
